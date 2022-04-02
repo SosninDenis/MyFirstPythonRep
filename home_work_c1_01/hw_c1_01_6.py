@@ -22,7 +22,7 @@ while True:
     if ckeck(final_value):
         final_value = float(final_value)
         break
-i = 0
+i = 1
 while True:
     i = i + 1
     initial_value = initial_value * 1.1
