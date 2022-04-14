@@ -3,5 +3,5 @@
 # Подсказка: элементы, удовлетворяющие условию, оформить в виде списка. Для его
 # формирования используйте генератор.
 
-source_list = [300, 2, 12, 44, 1, 1, 4, 10, 7, 1, 78, 123, 55]
-print(f'Новый список {[source_list[ind] for ind in range(1, len(source_list)) if source_list[ind] > source_list[ind - 1]]}')
+some_list = [300, 2, 12, 44, 1, 1, 4, 10, 7, 1, 78, 123, 55]
+print(f'Новый список {[some_list[ind] for ind in range(1, len(some_list)) if some_list[ind] > some_list[ind - 1]]}')
