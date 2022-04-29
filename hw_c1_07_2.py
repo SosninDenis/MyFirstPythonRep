@@ -1,35 +1,52 @@
-class Clothes:
-    class_clothes = 0
-    all_clothes = 0
-    def __init__(self):
-        Clothes.all_clothes += self.class_clothes
+from abc import abstractmethod
 
-    def calculate_all_cloth(self):
-        print(f'{Clothes.all_clothes}')
+
+class Clothes:
+    all_clothes = 0
+
+    def __init__(self, title):
+        self.title = title
+        Clothes.all_clothes += self.calculate_cloth
+
+    @abstractmethod
+    def calculate_cloth(self):
+        pass
 
 
 class Coats (Clothes):
 
-    def __init__(self, v):
-        self.v = v
-        self.class_clothes = self.v / 6.5 + 0.5
-        super().__init__()
+    def __str__(self):
+        return f'Пальто {self.title}, на него ушло {self.calculate_cloth:.02f} м2 ткани\n' \
+               f'Общий расход ткани {Clothes.all_clothes:.02f} м2\n'
 
+    def __init__(self, title, volume):
+        self.volume = volume
+        super().__init__(title)
+
+    @property
     def calculate_cloth(self):
-        return self.class_clothes
+        return self.volume / 6.5 + 0.5
 
 
 class Suits (Clothes):
-    def __init__(self, h):
-        self.h = h
-        self.class_clothes = self.h *2 + 0.3
-        super().__init__()
+    def __str__(self):
+        return f'Костюм {self.title}, на него ушло {self.calculate_cloth:.02f} м2 ткани\n' \
+               f'Общий расход ткани {Clothes.all_clothes:.02f} м2\n'
 
+    def __init__(self, title, height):
+        self.height = height
+        super().__init__(title)
+
+    @property
     def calculate_cloth(self):
-        return self.class_clothes
+        return self.height * 2 + 0.3
 
-sd = Coats(6)
-print(sd.calculate_cloth())
-sf = Suits(13)
-print(sf.calculate_cloth())
-print(Clothes.all_clothes)
+
+Coats_1 = Coats('Армани', 10)
+print(Coats_1)
+Suits_1 = Suits('Zara', 10)
+print(Suits_1)
+Suits_2 = Suits('АрмЯне', 2)
+print(Suits_2)
+Coats_2 = Coats('H&M', 30)
+print(Coats_2)
