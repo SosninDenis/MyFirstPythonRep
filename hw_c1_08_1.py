@@ -45,9 +45,3 @@ Time.is_valid_date('29-02-2001')
 Time.is_valid_date('29-03-199')
 
 example_date1 = Time.conversion_method('22-08-1989')
-
-
-
-
-
-

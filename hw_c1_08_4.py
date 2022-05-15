@@ -56,17 +56,3 @@ OfficeWarehouse.to_warehouse(printer)
 OfficeWarehouse.to_warehouse(scanner)
 OfficeWarehouse.to_warehouse(copier)
 print(OfficeWarehouse())
-
-
-
-
-
-
-
-
-
-
-
-
-
-
